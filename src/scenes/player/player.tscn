@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cgdu4wp6ewklk"]
 
+[ext_resource type="Script" uid="uid://dwdk8si6kp5ub" path="res://scripts/player_movement.gd" id="1_8afob"]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sh265"]
 load_path = "res://.godot/imported/Player.png-51dde57e68e4a9ef2342c6a934472dd7.ctex"
 
@@ -15,3 +17,12 @@ texture = SubResource("CompressedTexture2D_sh265")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=772339411]
 shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="Movement" type="Node" parent="." unique_id=1957989945 node_paths=PackedStringArray("base")]
+script = ExtResource("1_8afob")
+speed = 150.0
+acceleration = 1000.0
+friction = 1000.0
+base = NodePath("../CharacterBody2D")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=659044315]
