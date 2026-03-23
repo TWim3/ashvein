@@ -1,28 +1,36 @@
 [gd_scene format=3 uid="uid://cgdu4wp6ewklk"]
 
 [ext_resource type="Script" uid="uid://dwdk8si6kp5ub" path="res://scripts/player_movement.gd" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://cjlfm1eive10e" path="res://assets/Prototype/Player.png" id="1_dovo2"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sh265"]
-load_path = "res://.godot/imported/Player.png-51dde57e68e4a9ef2342c6a934472dd7.ctex"
+[sub_resource type="SpriteFrames" id="SpriteFrames_gmlin"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dovo2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(32, 16)
 
-[node name="Node2D" type="Node2D" unique_id=194602366]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1820894193]
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=212757194]
-texture = SubResource("CompressedTexture2D_sh265")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=772339411]
-shape = SubResource("RectangleShape2D_4flbx")
-
-[node name="Movement" type="Node" parent="." unique_id=1957989945 node_paths=PackedStringArray("base")]
-script = ExtResource("1_8afob")
-speed = 150.0
-acceleration = 1000.0
-friction = 1000.0
-base = NodePath("../CharacterBody2D")
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1820894193]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=659044315]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2131877833]
+sprite_frames = SubResource("SpriteFrames_gmlin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=772339411]
+shape = SubResource("RectangleShape2D_4flbx")
+
+[node name="Comps" type="Node" parent="." unique_id=29900675]
+
+[node name="Movement" type="Node" parent="Comps" unique_id=1957989945 node_paths=PackedStringArray("base", "sprite")]
+script = ExtResource("1_8afob")
+speed = 175.0
+base = NodePath("../..")
+sprite = NodePath("../../Sprite")
