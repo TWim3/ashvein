@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwwbfo2wm6or0"]
+
+[ext_resource type="Texture2D" uid="uid://brb1pt7oqbxn2" path="res://assets/overworld_tiles.png" id="1_n3lcv"]
+[ext_resource type="Script" uid="uid://b6vhb1h3jhrwu" path="res://src/world/overworld/tile_map_layer.gd" id="2_jvs31"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_662u0"]
+texture = ExtResource("1_n3lcv")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dhsp4"]
+sources/0 = SubResource("TileSetAtlasSource_662u0")
+
+[node name="Overworld" type="Node2D" unique_id=1716860134]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=243897788]
+tile_set = SubResource("TileSet_dhsp4")
+script = ExtResource("2_jvs31")
