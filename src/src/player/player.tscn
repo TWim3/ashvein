@@ -54,6 +54,7 @@ size = Vector2(32, 16)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=1820894193]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=659044315]
+zoom = Vector2(0.5, 0.5)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2131877833]
 sprite_frames = SubResource("SpriteFrames_gmlin")

@@ -2,14 +2,13 @@ extends Node
 
 var master_seed = 0
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+enum SeedType {
+	ELEVATION = 0x54455252,
+	MOISTURE = 0x4D4F4953,
+}
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_seed(seed_type: SeedType) -> int:
+	return master_seed ^ seed_type
 
 func new_game(seed_override: int = -1) -> void:
 	if seed_override >= 0:
