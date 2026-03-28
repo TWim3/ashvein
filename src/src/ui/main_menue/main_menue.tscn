@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ds2u2p1mo2ewc"]
+
+[ext_resource type="Texture2D" uid="uid://bflgoc3x8g6vm" path="res://kesh_icon.png" id="1_2cbvn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2cbvn"]
+font_size = 64
+
+[node name="MainMenue" type="Control" unique_id=125333366]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1202896960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28, 0.2772, 0.2779, 1)
+
+[node name="Page" type="CenterContainer" parent="." unique_id=1243495573]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hero" type="VBoxContainer" parent="Page" unique_id=626224500]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="H1" type="HBoxContainer" parent="Page/Hero" unique_id=1943215152]
+layout_mode = 2
+
+[node name="Logo" type="TextureRect" parent="Page/Hero/H1" unique_id=1161163529]
+layout_mode = 2
+texture = ExtResource("1_2cbvn")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="Page/Hero/H1" unique_id=337228151]
+layout_mode = 2
+text = "Ashvein"
+label_settings = SubResource("LabelSettings_2cbvn")
+
+[node name="Buttons" type="HBoxContainer" parent="Page/Hero" unique_id=829091685]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="New Game" type="Button" parent="Page/Hero/Buttons" unique_id=230752254]
+layout_mode = 2
+text = "New Game"
+
+[node name="Exit" type="Button" parent="Page/Hero/Buttons" unique_id=1234061171]
+layout_mode = 2
+text = "Exit"
