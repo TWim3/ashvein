@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ur0270wc172h"]
+
+[ext_resource type="PackedScene" uid="uid://bwwbfo2wm6or0" path="res://src/world/overworld/overworld.tscn" id="1_gpcte"]
+[ext_resource type="Texture2D" uid="uid://bflgoc3x8g6vm" path="res://kesh_icon.png" id="2_ngkwv"]
+[ext_resource type="PackedScene" uid="uid://cgdu4wp6ewklk" path="res://src/player/player.tscn" id="3_xr3do"]
+
+[node name="Main" type="Node2D" unique_id=1796411245]
+
+[node name="Overworld" parent="." unique_id=1716860134 instance=ExtResource("1_gpcte")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323780148]
+visible = false
+scale = Vector2(267.86282, 191.06668)
+texture = ExtResource("2_ngkwv")
+
+[node name="Player" parent="." unique_id=194602366 instance=ExtResource("3_xr3do")]
+position = Vector2(644.99994, 388.99997)
+scale = Vector2(7.9296875, 5.65625)
